@@ -8,6 +8,10 @@ set :database, {adapter: "sqlite3", database: "barbershop.db"}
 
 
 class Client < ActiveRecord::Base
+	validates :name, presence: true
+	validates :phone, presence: true
+	validates :datetime, presence: true
+	validates :color, presence: true
 end
 
 class Barber < ActiveRecord::Base
@@ -28,10 +32,11 @@ end
 
 post '/visit' do
 	c = Client.new params[:client]
-	c.save
-
-
-	erb "You has been enrolled, please check your data"
+	if c.save
+		erb "You has been enrolled, please check your data"
+	else
+		erb "Somthing went wrong"
+	end
 end  
 
 get '/visitors' do
