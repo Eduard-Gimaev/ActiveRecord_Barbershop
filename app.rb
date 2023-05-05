@@ -15,6 +15,7 @@ end
 
 before do
 	@barbers = Barber.all
+	@visitors = Client.all
 end
 
 get '/' do
@@ -32,7 +33,16 @@ post '/visit' do
 	@barber = params[:barber]
 	@color = params[:colorpicker]
 
+	Client.create :name => @username
+	Client.create :phone => @phone
+	Client.create :datetime => @datetime
+	Client.create :barber => @barber
+	Client.create :color => @color
+
 
 	erb "You has been enrolled, please check your data"
 end  
 
+get '/visitors' do
+	erb :visitors
+  end

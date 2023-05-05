@@ -1,0 +1,13 @@
+<h2>List of Visitors</h2>
+
+
+ <%@visitors.each do |visitor|%>
+    <p>
+        <%= visitor.name%>
+        <%= visitor.phone%>
+        <%= visitor.datetime%>
+        <%= visitor.barber%>
+        <%= visitor.color%>
+        <hr>
+    </p>
+<%end%>
