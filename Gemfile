@@ -7,6 +7,6 @@ gem "sinatra-activerecord"
 gem "sinatra-contrib"
 gem "rake"
 
-group :development
+group :development do
     gem "tux"
 end
