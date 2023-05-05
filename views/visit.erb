@@ -3,22 +3,22 @@
 
   <div class="form-group">
     <label>Your name</label>
-    <input name="username" type="text" class="form-control" placeholder="put you name here" value = "<%=@username%>">
+    <input name="client[name]" type="text" class="form-control" placeholder="put you name here" value = "">
   </div>
 
   <div class="form-group">
     <label>You phone</label>
-    <input name="phone" type="text" class="form-control" placeholder="put your phone number here" value = "<%=@phone%>">
+    <input name="client[phone]" type="text" class="form-control" placeholder="put your phone number here" value = "">
   </div>
 
   <div class="form-group">
     <label>When do you plan to visit us?</label>
-    <input name="datetime" type="text" class="form-control" placeholder="Please, choose your date and time" value = "<%=@datename%>">
+    <input name="client[datetime]" type="text" class="form-control" placeholder="Please, choose your date and time" value = "">
   </div>
 
   <div class="form-group">
     <label>Choose your Barber</label>
-      <select name = "barber" class="form-control">
+      <select name = "client[barber]" class="form-control">
       <% @barbers.each do |item|%>
       <option <%= @barber == item['name']? 'selected': '' %>><%= item['name'] %></option>  
       <%end%>
@@ -27,7 +27,7 @@
 
   <div class="form-group">
     <label>Choose a color for dyeing</label>
-      <select id = "coloricker" name = "colorpicker">
+      <select id = "coloricker" name = "client[color]">
       <option value= "#7bd148">Green</option>
       <option value= "#5484ed">Bold blue</option>
       <option value= "#a4bdfc">Blue</option>

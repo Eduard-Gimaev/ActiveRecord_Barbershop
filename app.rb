@@ -27,17 +27,8 @@ get '/visit' do
 end  
 
 post '/visit' do
-	@username = params[:username]
-	@phone = params[:phone]
-	@datetime = params[:datetime]
-	@barber = params[:barber]
-	@color = params[:colorpicker]
-
-	Client.create :name => @username
-	Client.create :phone => @phone
-	Client.create :datetime => @datetime
-	Client.create :barber => @barber
-	Client.create :color => @color
+	c = Client.new params[:client]
+	c.save
 
 
 	erb "You has been enrolled, please check your data"
