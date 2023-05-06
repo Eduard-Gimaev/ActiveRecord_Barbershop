@@ -51,7 +51,7 @@ get '/visitors' do
 	erb  :barber
   end
 
-  get '/visitor/:id' do
-	@visitor = Client.find(params[:id])
+  get '/client/:id' do
+	@client = Client.find(params[:id])
 	erb :client
   end

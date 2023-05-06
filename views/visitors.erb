@@ -1,9 +1,9 @@
 <h2>List of Visitors</h2>
 
 
- <%@visitors.each do |visitor|%>
+ <%@visitors.each do |client|%>
     <p>
-    <a href = "/visitor/<%=visitor.id%>"><%= visitor.name%></a>
+    <a href = "/client/<%=client.id%>"><%= client.name%></a>
         <hr>
     </p>
 <%end%>
