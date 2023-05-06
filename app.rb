@@ -31,11 +31,11 @@ get '/visit' do
 end  
 
 post '/visit' do
-	c = Client.new params[:client]
-	if c.save
-		erb "You has been enrolled, please check your data"
+	@c = Client.new params[:client]
+	if @c.save
+		erb "Thanks. You've been enrolled now"
 	else
-		@error = c.errors.full_messages.first
+		@error = @c.errors.full_messages.first
 		erb :visit
 	end
 end  
