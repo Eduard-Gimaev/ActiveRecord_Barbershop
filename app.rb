@@ -8,7 +8,7 @@ set :database, {adapter: "sqlite3", database: "barbershop.db"}
 
 
 class Client < ActiveRecord::Base
-	validates :name, presence: true
+	validates :name, presence: true, length: { minimum: 3}
 	validates :phone, presence: true
 	validates :datetime, presence: true
 	validates :color, presence: true
@@ -27,6 +27,7 @@ get '/' do
 end
 
 get '/visit' do
+	@c = Client.new
 	erb :visit
 end  
 
@@ -42,4 +43,8 @@ end
 
 get '/visitors' do
 	erb :visitors
+  end
+
+  get '/barber/:id' do
+	erb  :barber
   end
