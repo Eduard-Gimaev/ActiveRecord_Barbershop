@@ -35,7 +35,8 @@ post '/visit' do
 	if c.save
 		erb "You has been enrolled, please check your data"
 	else
-		erb "Somthing went wrong"
+		@error = c.errors.full_messages.first
+		erb :visit
 	end
 end  
 
