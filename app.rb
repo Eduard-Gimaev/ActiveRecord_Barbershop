@@ -42,10 +42,16 @@ post '/visit' do
 end  
 
 get '/visitors' do
+	@clients = Client.all
 	erb :visitors
   end
 
   get '/barber/:id/' do
 	@barber = Barber.find(params[:id])
 	erb  :barber
+  end
+
+  get '/visitor/:id' do
+	@visitor = Client.find(params[:id])
+	erb :client
   end
