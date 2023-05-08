@@ -19,7 +19,7 @@ end
 
 before do
 	@barbers = Barber.all
-	@visitors = Client.all
+	@clients = Client.all
 end
 
 get '/' do
